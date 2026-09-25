@@ -1,13 +1,13 @@
 import 'package:get_it/get_it.dart';
 import 'package:forked/core/config/app_config.dart';
-import 'package:forked/core/services/supabase_service.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 final getIt = GetIt.instance;
 
 Future<void> configureDependencies({
   required AppConfig config,
-  required SupabaseService supabaseService,
+  required SupabaseClient api,
 }) async {
   getIt.registerSingleton<AppConfig>(config);
-  getIt.registerSingleton<SupabaseService>(supabaseService);
+  getIt.registerSingleton<SupabaseClient>(api);
 }

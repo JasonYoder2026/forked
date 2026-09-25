@@ -23,8 +23,9 @@ Future<void> main() async {
 
   final supabaseService = SupabaseService(config);
   await supabaseService.initialize();
+  final supabaseClient = supabaseService.client;
 
-  await configureDependencies(config: config, supabaseService: supabaseService);
+  await configureDependencies(config: config, api: supabaseClient);
 
   runApp(const Forked());
 }
