@@ -3,7 +3,8 @@ import 'package:forked/app/forked.dart';
 import 'package:forked/core/config/app_config.dart';
 import 'package:flutter/services.dart';
 import 'package:forked/core/config/environment.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:forked/core/services/supabase_service.dart';
+import 'package:forked/core/config/injection.dart';
 
 Environment environmentFromFlavor() {
   return switch (appFlavor) {
@@ -20,10 +21,10 @@ Future<void> main() async {
   final environment = environmentFromFlavor();
   final config = await AppConfig.load(environment);
 
-  await Supabase.initialize(
-    url: config.supabaseUrl,
-    publishableKey: config.supabasePublishableKey,
-  );
+  final supabaseService = SupabaseService(config);
+  await supabaseService.initialize();
+
+  await configureDependencies(config: config, supabaseService: supabaseService);
 
   runApp(const Forked());
 }
