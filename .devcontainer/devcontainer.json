@@ -1,4 +1,6 @@
 {
   "image": "ghcr.io/cirruslabs/flutter:stable",
-  "features": {}
+  "features": {
+    "ghcr.io/devcontainers-community/templates/dart:1": {}
+  }
 }
