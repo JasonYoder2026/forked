@@ -3,7 +3,7 @@ import 'package:forked/app/forked.dart';
 import 'package:forked/core/config/app_config.dart';
 import 'package:flutter/services.dart';
 import 'package:forked/core/config/environment.dart';
-import 'package:forked/core/services/supabase_service.dart';
+import 'package:forked/data/supabase/supabase_service.dart';
 import 'package:forked/core/config/injection.dart';
 
 Environment environmentFromFlavor() {
