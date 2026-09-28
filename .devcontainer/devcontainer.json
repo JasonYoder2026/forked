@@ -1,6 +1,11 @@
 {
+  "name": "Flutter Workspace",
   "image": "ghcr.io/cirruslabs/flutter:stable",
-  "features": {
-    "ghcr.io/devcontainers-community/templates/dart:1": {}
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Dart-Code.flutter"
+      ]
+    }
   }
 }
