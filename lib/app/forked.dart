@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:forked/core/config/app_theme.dart';
 import 'package:forked/features/home/page.dart';
 
 class Forked extends StatelessWidget {
@@ -8,9 +9,9 @@ class Forked extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Forked',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.system,
       home: const HomePage(title: 'Flutter Demo Home Page'),
     );
   }
